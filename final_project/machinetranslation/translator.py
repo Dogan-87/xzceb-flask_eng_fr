@@ -20,15 +20,21 @@ language_translator.set_service_url(url)
 
 def englishToFrench(englishText):
     #write the code here
-    frenchText = language_translator.translate(
+    translation = language_translator.translate(
     text = englishText,
     model_id= 'en-fr' ).get_result()
-    #print(json.dumps(translation, indent=2, ensure_ascii=False))
+    frenchText=translation['translations'][0]['translation']
     return frenchText
 
 def frenchToEnglish(frenchText):
     #write the code here
+    translation = language_translator.translate(
+    text = frenchText,
+    model_id= 'fr-en' ).get_result()
+    englishText=translation['translations'][0]['translation']
     return englishText
 
 asd=englishToFrench('How are you')
-asd
+dse=frenchToEnglish(asd)
+print(asd)
+print(dse)
