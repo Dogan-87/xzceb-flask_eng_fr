@@ -22,21 +22,21 @@ language_translator.set_service_url(url)
 
 def english_to_french(english_text):
     '''This method translates english inputs into french '''
-    translation = language_translator.translate(
-    text = english_text,
-    model_id= 'en-fr' ).get_result()
+    if english_text is '':
+        return None
+    translation = language_translator.translate(text = english_text,model_id= 'en-fr' ).get_result()
     french_text=translation['translations'][0]['translation']
     return french_text
 
 def french_to_english(french_text):
     '''This method translates french inputs into english '''
-    translation = language_translator.translate(
-    text = french_text,
-    model_id= 'fr-en' ).get_result()
+    if french_text is '':
+        return None
+    translation = language_translator.translate(text = french_text,model_id= 'fr-en' ).get_result()
     english_text=translation['translations'][0]['translation']
     return english_text
 
-#asd=englishToFrench('')
-#dse=frenchToEnglish(asd)
+#asd=english_to_french('')
+#dse=french_to_english(asd)
 #print(asd)
 #print(dse)
