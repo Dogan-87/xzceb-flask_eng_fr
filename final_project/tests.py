@@ -1,25 +1,6 @@
 import unittest
 #from translator import english_to_french, french_to_english
-#from machinetranslation import translator
-
-import sys
-import os
-  
-# getting the name of the directory
-# where the this file is present.
-current = os.path.dirname(os.path.realpath(__file__))
-  
-# Getting the parent directory name
-# where the current directory is present.
-parent = os.path.dirname(current)
-  
-# adding the parent directory to 
-# the sys.path.
-sys.path.append(parent)
-  
-# now we can import the module in the parent
-# directory.
-import translator
+from machinetranslation import translator
 
 class Teste2f(unittest.TestCase):
     def test1(self):
